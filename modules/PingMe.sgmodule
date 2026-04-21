@@ -1,6 +1,6 @@
 #!name=PingMe 自动化签到+视频奖励
 #!desc=Surge 5+ 模块，支持自定义cron表达式
-#!arguments=CRON:0 8,20 * * *
+#!arguments=CRON:"0 8,20 * * *"
 
 [MITM]
 hostname = api.pingmeapp.net
