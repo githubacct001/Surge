@@ -6,7 +6,7 @@ hostname = api.pingmeapp.net
 
 [Script]
 # 账号抓取（请求拦截）— 打开 PingMe 任意页面时触发
-PingMe-账号抓取 = type=http-request, pattern=^https:\/\/api\.pingmeapp\.net\/app\/queryBalanceAndBonus, script-path=PingMe.js, timeout=10
+PingMe-账号抓取 = type=http-request, pattern=^https:\/\/api\.pingmeapp\.net\/app\/queryBalanceAndBonus, script-path=https://raw.githubusercontent.com/githubacct001/Surge/main/modules/PingMe.js, timeout=10
 
 # 定时任务（每日 8:00 和 20:30）
-PingMe-签到任务 = type=cron, cronexp=0 8,20 * * *, script-path=PingMe.js, timeout=60
+PingMe-签到任务 = type=cron, cronexp=0 8,20 * * *, script-path=https://raw.githubusercontent.com/githubacct001/Surge/main/modules/PingMe.js, timeout=60
