@@ -7,6 +7,8 @@ const SECRET='0fOiukQq7jXZV2GRi9LGlO';
 const MAX_VIDEO = 5;
 const VIDEO_DELAY = 8000;
 const ACCOUNT_GAP = 3500;
+const DEFAULT_CRON = '0 8,20 * * *';
+const CRON_EXP = (typeof $argument !== 'undefined' && $argument.trim()) ? $argument.trim() : DEFAULT_CRON;
 
 const IOS_VERSIONS = ['17.5.1','17.6.1','17.4.1','17.2.1','16.7.8','17.6','17.3.1','18.0.1','17.1.2','16.6.1'];
 const IOS_SCALES = ['2.00','3.00','3.00','2.00','3.00'];
@@ -325,7 +327,7 @@ if (typeof $request !== 'undefined' && $request && $request.url) {
 
 } else {
   // ── cron 入口（定时任务执行）──────────────────────────
-  console.log(`【${scriptName}】定时任务启动`);
+  console.log(`【${scriptName}】定时任务启动 (cronexp: ${CRON_EXP})`);
   const store = loadStore();
   const ids = store.order.filter(id => store.accounts[id]);
 
