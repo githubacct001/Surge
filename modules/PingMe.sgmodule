@@ -1,10 +1,10 @@
 #!name=PingMe 自动化签到+视频奖励
 #!desc=Surge 5+ 模块，支持自定义cron表达式
-#!arguments=cron_expr=%220%208%2C20%20%2A%20%2A%20%2A%22
+#!arguments=CRON:0 8,20 * * *
 
 [MITM]
 hostname = api.pingmeapp.net
 
 [Script]
 PingMe-账号抓取 = type=http-request, pattern=^https:\/\/api\.pingmeapp\.net\/app\/queryBalanceAndBonus, script-path=https://raw.githubusercontent.com/githubacct001/Surge/main/modules/PingMe.js, timeout=10
-PingMe-签到任务 = type=cron, cronexp=%cron_expr%, script-path=https://raw.githubusercontent.com/githubacct001/Surge/main/modules/PingMe.js, timeout=60
+PingMe-签到任务 = type=cron, cronexp="{{{CRON}}}", script-path=https://raw.githubusercontent.com/githubacct001/Surge/main/modules/PingMe.js, timeout=60
